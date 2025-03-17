@@ -73,4 +73,36 @@
 - Une fois installé, votre Wemos créera un réseau **WLED-AP**.
 - Connectez-vous avec votre téléphone/PC et configurez-le ! 🎨✨
 
+## 🔥 6. Flasher WLED avec la bonne version
+
+### 📌 a. Sélectionner la version de WLED
+- Sur la page [install.wled.me](https://install.wled.me), clique sur **Install WLED**.
+- Il te propose plusieurs versions :
+  - **Prends la dernière version stable** (évite les versions bêta pour plus de stabilité).
+  - Exemple : **WLED 0.xx.xx Release**.
+
+### 📌 b. Choisir le bon firmware
+- Sélectionne **Plain (Generic ESP8266)**.
+- C’est l’option classique qui fonctionne pour le **Wemos D1 Mini**.
+
+### 📌 c. Sélectionner le port série
+- **Branche ton Wemos D1 Mini** à ton PC avec un bon câble USB (**data**, pas juste charge).
+- Dans la liste des **Serial Ports**, choisis celui qui ressemble à :
+  - **"COMX"** (Windows) où **X** est un chiffre.
+  - **"/dev/ttyUSBX"** (Linux/Mac).
+
+- **Si aucun port ne s’affiche** :
+  - Vérifie que ton **câble permet bien le transfert de données**.
+  - Essaie un **autre port USB** ou un **autre câble**.
+  - Installe le **driver CH340** si nécessaire (le Wemos D1 Mini utilise souvent ce chipset) :
+    - [Driver CH340 pour Windows/Mac/Linux](https://www.wch.cn/downloads/CH341SER_EXE.html)
+   
+      
+## ⚡ 7. Lancer l’installation de WLED
+- **Clique sur Install** et laisse le processus se terminer (**environ 1 à 2 minutes**).
+- Une fois terminé, ton **Wemos va redémarrer** et créer un réseau Wi-Fi **"WLED-AP"**.
+
+
 📌 **Besoin d'aide ?** Posez-moi tes questions ! 🚀😃
+
+
