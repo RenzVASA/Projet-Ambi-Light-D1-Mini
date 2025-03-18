@@ -103,6 +103,6 @@
 - Une fois terminé, ton **Wemos va redémarrer** et créer un réseau Wi-Fi **"WLED-AP"**.
 
 
-📌 **Besoin d'aide ?** Posez-moi tes questions ! 🚀😃
+## 📌 **Besoin d'aide ?** Posez-moi tes questions ! 🚀😃
 
 
