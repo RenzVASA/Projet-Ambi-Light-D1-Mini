@@ -1,6 +1,6 @@
 # Calcul de la consommation d'un ruban LED en 5V
 
-## 💡 Comment calculer la consommation d'un ruban LED en 5V ?
+## 💡 Comment calculer la consommation du ruban LED en 5V ?
 
 Nous allons suivre **5 étapes** :
 1. **Calcul de la longueur du ruban**
