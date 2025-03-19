@@ -47,7 +47,7 @@
    }
    ```  
 
-3. **Téléversez** le code sur la carte en cliquant sur 🔼 (flèche vers la droite).  
+3. **Téléversez** le code sur la carte en cliquant sur ➡️ (flèche vers la droite).  
 4. **Ouvrez le Moniteur Série** via **Outils > Moniteur Série** (vitesse : **115200 bauds**).  
 5. **L’adresse MAC s'affichera**, exemple :  
 
