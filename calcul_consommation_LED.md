@@ -113,7 +113,7 @@ Avec **U = 5V**, on a :
 
 6. **Coût annuel (€) :**
    ```math
-   58.8 \times 0.20 = 11.85 €
+   58.8 \times 0.2016 = 11.85 €
    ```
 
 **💡 Conclusion :** Pour cet écran, un ruban **60 LED/m en 5V** consommera **6.44 A**, et coûtera **11.85 €/an** pour **5h d'utilisation quotidienne**.
