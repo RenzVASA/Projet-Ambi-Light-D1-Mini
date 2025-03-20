@@ -133,3 +133,120 @@ Avec **U = 5V**, on a :
 
 Si vous voulez un **calcul personnalisé**, utilisez les formules ci-dessus et adaptez à votre besoin !
 
+---
+# 🔌 Calculateur automatique de consommation des LED 💡
+
+Simplifiez-vous la vie avec ce code HTML + JavaScript ! Il vous permet de calculer automatiquement plusieurs paramètres liés à l’utilisation des rubans LED. Il suffit de le copier-coller dans un éditeur HTML en ligne ou sur votre propre site pour effectuer les calculs en quelques secondes.
+
+## 📊 Ce que ce calculateur permet d’évaluer :
+
+✅ Longueur du ruban LED requise (en mètres) en fonction des dimensions réelles de l’écran.  
+✅ Nombre total de LED en fonction du type de ruban choisi (30 ou 60 LED/m).  
+✅ Intensité électrique totale consommée (en ampères).  
+✅ Puissance totale utilisée par le ruban (en watts).  
+✅ Consommation énergétique quotidienne (en kWh).  
+✅ Coût annuel d’utilisation basé sur le prix du kWh renseigné.  
+
+---
+
+## 📌 Mode d’emploi :
+1️⃣ Entrez la largeur et la hauteur **réelles** de l’écran en centimètres.  
+2️⃣ Sélectionnez le type de LED (30 ou 60 LED/m).  
+3️⃣ Indiquez le nombre d’heures d’utilisation par jour.  
+
+---
+
+## 🖥️ Code HTML + JavaScript :
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul de Consommation LED</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+        }
+        input, select, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 10px;
+            background: #f4f4f4;
+            border-left: 5px solid #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcul de Consommation des LED</h1>
+    
+    <label for="largeur">Largeur de l'écran (cm) :</label>
+    <input type="number" id="largeur" placeholder="Entrez la largeur" required>
+
+    <label for="hauteur">Hauteur de l'écran (cm) :</label>
+    <input type="number" id="hauteur" placeholder="Entrez la hauteur" required>
+
+    <label for="typeLED">Type de LED (30 ou 60 LEDs/m) :</label>
+    <select id="typeLED">
+        <option value="30">30 LEDs/m</option>
+        <option value="60">60 LEDs/m</option>
+    </select>
+
+    <label for="temps">Temps d'utilisation par jour (heures) :</label>
+    <input type="number" id="temps" placeholder="Entrez le temps d'utilisation" required>
+
+    <label for="prix">Prix du kWh (€) :</label>
+    <input type="number" id="prix" placeholder="Entrez le prix du kWh" required>
+
+    <button onclick="calculer()">Calculer</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function calculer() {
+            var largeur = parseFloat(document.getElementById("largeur").value);
+            var hauteur = parseFloat(document.getElementById("hauteur").value);
+            var typeLED = parseInt(document.getElementById("typeLED").value);
+            var temps = parseFloat(document.getElementById("temps").value);
+            var prix = parseFloat(document.getElementById("prix").value);
+
+            if (isNaN(largeur) || isNaN(hauteur) || isNaN(temps) || isNaN(prix)) {
+                alert("Veuillez remplir tous les champs avec des valeurs valides.");
+                return;
+            }
+
+            var longueurLED = 2 * (largeur + hauteur) / 100 - 2.5 * 4 / 100;
+            var nombreLEDs = longueurLED * typeLED;
+            var ampereTotal = nombreLEDs * 0.060;
+            var puissanceTotaleW = ampereTotal * 5;
+            var consommationKWhJour = puissanceTotaleW * temps / 1000;
+            var coutAnnuel = consommationKWhJour * 365 * prix;
+
+            document.getElementById("result").innerHTML = `
+                <p><strong>Longueur du ruban LED :</strong> ${longueurLED.toFixed(2)} m</p>
+                <p><strong>Nombre total de LED :</strong> ${nombreLEDs}</p>
+                <p><strong>Intensité totale :</strong> ${ampereTotal.toFixed(2)} A</p>
+                <p><strong>Puissance totale :</strong> ${puissanceTotaleW.toFixed(2)} W</p>
+                <p><strong>Consommation journalière :</strong> ${consommationKWhJour.toFixed(3)} kWh</p>
+                <p><strong>Coût annuel :</strong> ${coutAnnuel.toFixed(2)} €</p>
+            `;
+        }
+    </script>
+</body>
+</html>
+```
+---
+Voici, par exemple, un site pour tester le code : [OneCompiler](https://onecompiler.com/html/3y5x8jr6s).
+
+
