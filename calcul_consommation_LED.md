@@ -249,4 +249,75 @@ Simplifiez-vous la vie avec ce code HTML + JavaScript ! Il vous permet de calcul
 ---
 Voici, par exemple, un site pour tester le code : [OneCompiler](https://onecompiler.com/html/3y5x8jr6s).
 
+---
 
+Si vous souhaitez également **calculer automatiquement le nombre d'ampères final en fonction de la luminosité**, ce qui peut aider à **choisir une alimentation adaptée**, utilisez ce calculateur :  
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limiteur d'Ampérage LED</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+        }
+        input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 10px;
+            background: #f4f4f4;
+            border-left: 5px solid #FF5733;
+        }
+    </style>
+</head>
+<body>
+    <h1>Limiteur d'Ampérage LED</h1>
+    
+    <label for="ampereTotal">Ampérage total (A) :</label>
+    <input type="number" id="ampereTotal" placeholder="Ex: 6" required>
+
+    <label for="maxAmpere">Seuil maximal d'ampères (A) :</label>
+    <input type="number" id="maxAmpere" placeholder="Ex: 5" required>
+
+    <button onclick="limiterAmpere()">Vérifier</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function limiterAmpere() {
+            var ampereTotal = parseFloat(document.getElementById("ampereTotal").value);
+            var maxAmpere = parseFloat(document.getElementById("maxAmpere").value);
+
+            if (isNaN(ampereTotal) || isNaN(maxAmpere) || ampereTotal <= 0 || maxAmpere <= 0) {
+                alert("Veuillez entrer des valeurs valides.");
+                return;
+            }
+
+            var luminosite = 100; // 100% par défaut
+
+            if (ampereTotal > maxAmpere) {
+                luminosite = (maxAmpere / ampereTotal) * 100;
+                ampereTotal = maxAmpere; // Ajuste l'ampérage à la limite fixée
+            }
+
+            document.getElementById("result").innerHTML = `
+                <p><strong>Ampérage total ajusté :</strong> ${ampereTotal.toFixed(2)} A</p>
+                <p><strong>Luminosité maximale recommandée :</strong> ${luminosite.toFixed(0)}%</p>
+            `;
+        }
+    </script>
+</body>
+</html>
