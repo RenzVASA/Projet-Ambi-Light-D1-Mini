@@ -1,27 +1,27 @@
-<img src="banner.png" alt="RenzVASA : je fabrique des outils pour les cerveaux qui fonctionnent autrement" width="100%">
+# Ambi-Light D1 Mini
 
-Développeur et électronicien, en Bac Pro CIEL (cybersécurité, informatique et réseaux, électronique). Je fais des apps Mac, des sites web et des cartes électroniques, du circuit imprimé jusqu'à l'interface.
+Un éclairage d'ambiance piloté en Wi-Fi, avec un microcontrôleur Wemos D1 Mini (ESP8266), le firmware WLED et une bande LED WS2812B.
 
-**Portfolio : [renzvasa.github.io](https://renzvasa.github.io)**
+<img src="Images/Sche%CC%81ma-D1.jpg" alt="Schéma de câblage : alimentation USB 5 V, Wemos D1 Mini et bande LED WS2812B" width="100%">
 
-### Mes apps
+## La documentation
 
-Deux apps Mac gratuites et open source, pensées d'abord pour les personnes neuroatypiques. Tout reste sur l'ordinateur.
+1. **[Flasher WLED sur le D1 Mini](installation_WLED-D1.md)** : installer le firmware depuis le navigateur.
+2. **[Trouver l'adresse MAC du Wemos](GET_MAC_WEMOS.md)** : pour le réserver sur le réseau.
+3. **[Le schéma de câblage](Wemos_LED_Schema.md)** : alimentation 5 V, masse commune, ligne de données.
+4. **[Calculer la consommation](calcul_consommation_LED.md)** : choisir la bonne alimentation selon le nombre de LED.
 
-| | |
-|---|---|
-| <img src="https://raw.githubusercontent.com/RenzVASA/bullo/main/src/assets/logo-bullo-64.png" width="40" alt=""> | **[Bullo](https://github.com/RenzVASA/bullo)** : étudier sans lutter contre son cerveau. Capture tes cours, repère les devoirs, rappels doux, polices dys. [Télécharger](https://github.com/RenzVASA/bullo/releases/latest) · [Site](https://renzvasa.github.io/bullo/) |
-| <img src="https://raw.githubusercontent.com/RenzVASA/reprise/main/src/assets/icon-180.png" width="40" alt=""> | **[Reprise](https://github.com/RenzVASA/reprise)** : reprendre là où on s'était arrêté. Un raccourci sauvegarde apps, onglets et dossiers, un clic remet tout en place. [Télécharger](https://github.com/RenzVASA/reprise/releases/latest) · [Site](https://renzvasa.github.io/reprise/) |
+## Matériel
 
-### Autres projets
+- Wemos D1 Mini (ESP8266)
+- Bande LED adressable WS2812B
+- Alimentation 5 V adaptée au nombre de LED
+- Câble USB **data** (pas seulement charge) pour le flashage
 
-- **[Vibe Manager](https://github.com/RenzVASA/vibe-manager)** : le public vote pour la musique en scannant un QR code (Node.js, Socket.IO).
-- **[Portes ouvertes Bac Pro CIEL](https://renzvasa.github.io/bac-pro-ciel-jpo/)** : site de filière avec quiz d'orientation et tableau de bord en direct (Firebase, Chart.js).
-- **[WinDeploy Pro](https://github.com/RenzVASA/WinDeploy_PRO)** : génère le script qui prépare un PC Windows 11 neuf en un clic.
-- **[Ambi-Light D1 Mini](https://github.com/RenzVASA/Projet-Ambi-Light-D1-Mini)** : éclairage d'ambiance Wi-Fi avec un ESP8266 et WLED.
-- **[FLOW](https://github.com/RenzVASA/FLOW)** : tâches, humeur, habitudes et Pomodoro dans un seul fichier.
-- **[Temps d'écran](https://renzvasa.github.io/Temps-decran/)** : enquête et graphiques sur les habitudes numériques d'une classe.
+## Ce que j'ai fait
 
-### En ce moment
+Choix des composants, schéma sous Proteus 8, soudure, calcul de consommation et configuration de WLED.
 
-Je cherche un **stage ou une alternance** en développement, en réseaux ou en électronique.
+---
+
+Fait par [RenzVASA](https://renzvasa.github.io).
